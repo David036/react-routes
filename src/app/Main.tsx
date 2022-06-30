@@ -1,9 +1,10 @@
-import React from "react";
-import "./style.scss";
 import { NavLink } from "react-router-dom";
+import { TitleTypes } from "./types";
 
-export default function Index() {
-  const titleColumns = [
+import "./style.scss";
+
+export default function Index(): JSX.Element {
+  const titleColumns: TitleTypes[] = [
     {
       title: "ID",
       dataIndex: "id",
@@ -32,7 +33,7 @@ export default function Index() {
     },
   ];
 
-  const accounts = [
+  const accounts: TitleTypes[] = [
     {
       key: "1",
       id: "1",
@@ -59,20 +60,20 @@ export default function Index() {
   return (
     <div className="contentSection">
       <ul className="tableTitles">
-        {titleColumns.map((e) => {
-          return <li>{e.title}</li>;
+        {titleColumns.map((item: TitleTypes) => {
+          return <li>{item.title}</li>;
         })}
       </ul>
       <div className="tableUsers">
-        {accounts.map((e) => {
+        {accounts.map((item: TitleTypes) => {
           return (
             <ul>
-              <li>{e.id}</li>
-              <li>{e.name}</li>
-              <li>{e.createdOn}</li>
-              <li>{e.owner}</li>
+              <li>{item.id}</li>
+              <li>{item.name}</li>
+              <li>{item.createdOn}</li>
+              <li>{item.owner}</li>
               <li>
-                <NavLink to={`account${e.id}`}>View</NavLink>
+                <NavLink to={`account${item.id}`}>View</NavLink>
               </li>
             </ul>
           );
