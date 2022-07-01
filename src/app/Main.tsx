@@ -3,7 +3,7 @@ import { TitleTypes } from "../../src/app/types";
 
 import "./style.scss";
 
-export default function Index(): JSX.Element {
+export default function Main({accounts}:any): JSX.Element {
   const titleColumns: TitleTypes[] = [
     {
       title: "ID",
@@ -33,47 +33,25 @@ export default function Index(): JSX.Element {
     },
   ];
 
-  const accounts: TitleTypes[] = [
-    {
-      key: "1",
-      id: "1",
-      name: "Account 1",
-      createdOn: "5-8-2021",
-      owner: "User 1",
-    },
-    {
-      key: "2",
-      id: "2",
-      name: "Account 2",
-      createdOn: "5-8-2021",
-      owner: "User 2",
-    },
-    {
-      key: "3",
-      id: "3",
-      name: "Account 3",
-      createdOn: "5-8-2021",
-      owner: "User 3",
-    },
-  ];
+  
 
   return (
     <div className="contentSection">
       <ul className="tableTitles">
-        {titleColumns.map((item: TitleTypes) => {
-          return <li>{item.title}</li>;
+        {titleColumns.map((account: TitleTypes) => {
+          return <li>{account.title}</li>;
         })}
       </ul>
       <div className="tableUsers">
-        {accounts.map((item: TitleTypes) => {
+        {accounts.map((account: TitleTypes) => {
           return (
             <ul>
-              <li>{item.id}</li>
-              <li>{item.name}</li>
-              <li>{item.createdOn}</li>
-              <li>{item.owner}</li>
+              <li>{account.id}</li>
+              <li>{account.name}</li>
+              <li>{account.createdOn}</li>
+              <li>{account.owner}</li>
               <li>
-                <NavLink to={`account${item.id}`}>View</NavLink>
+                <NavLink to={`account${account.id}`}>View</NavLink>
               </li>
             </ul>
           );
