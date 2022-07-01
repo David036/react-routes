@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { TitleTypes } from "./types";
+import { TitleTypes } from "../../src/app/types";
 
 import "./style.scss";
 
