@@ -1,4 +1,4 @@
-export interface TitleTypes {
+export interface AccountTypes {
   key?: string;
   id?: string;
   name?: string;
