@@ -1,12 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import Main from "../src/app/Main";
-import AccountContent from "../src/app/AccountContent";
-import { TitleTypes } from "../src/app/types";
+import Main from "./app/Main";
+import AccountContent from "./app/AccountContent";
+import { TitleTypes } from "./app/types";
 
 import "./App.css";
 
 function App(): JSX.Element {
-
   const accounts: TitleTypes[] = [
     {
       key: "1",
@@ -30,20 +29,21 @@ function App(): JSX.Element {
       owner: "User 3",
     },
   ];
+
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Main accounts={accounts}/>} />
+        <Route path="/" element={<Main accounts={accounts} />} />
         <Route
-          path="/account1"
+          path={`account${accounts[0].id}`}
           element={<AccountContent accountNumber={accounts[0].id} />}
         />
         <Route
-          path="/account2"
+          path={`account${accounts[1].id}`}
           element={<AccountContent accountNumber={accounts[1].id} />}
         />
         <Route
-          path="/account3"
+          path={`account${accounts[2].id}`}
           element={<AccountContent accountNumber={accounts[2].id} />}
         />
       </Routes>

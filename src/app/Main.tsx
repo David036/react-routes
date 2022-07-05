@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { TitleTypes } from "../../src/app/types";
+import { TitleTypes } from "./types";
 
 import "./style.scss";
 
-export default function Main({accounts}:any): JSX.Element {
+export default function Main({ accounts }: any): JSX.Element {
   const titleColumns: TitleTypes[] = [
     {
       title: "ID",
@@ -32,8 +32,6 @@ export default function Main({accounts}:any): JSX.Element {
       dataIndex: "action",
     },
   ];
-
-  
 
   return (
     <div className="contentSection">
